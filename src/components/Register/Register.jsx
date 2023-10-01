@@ -39,30 +39,30 @@ const Register = () => {
 
 
         //Using regex for email validation.
-        if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email)) {
+        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             toast.error('Please use valid Email!');
             return
         }
 
         //Using regex for password validation.
         if (!/(?=.*[A-Z])/.test(password)) {
-            toast.error('Please add a uppercase letter');
+            toast.error('Please add a uppercase letter in password');
             return
         }
         else if (!/(?=.*[a-x])/.test(password)) {
-            toast.error('Please add a lowercase letter');
+            toast.error('Please add a lowercase letter in password');
             return
         }
         else if (!/(?=.*[!@#$&*])/.test(password)) {
-            toast.error('Please add a special character');
+            toast.error('Please add a special character in password');
             return
         }
         else if (!/(?=.*[0-9])/.test(password)) {
-            toast.error('Please add a one number');
+            toast.error('Please add a one number in password');
             return
         }
         else if (password.length < 6) {
-            toast.error('Please add 6 characters');
+            toast.error('Password must be of 6 character long!');
             return
         }
 

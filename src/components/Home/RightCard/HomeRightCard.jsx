@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Card, Container, ListGroup } from 'react-bootstrap';
+import toast from 'react-hot-toast';
 import { FaGoogle, FaGithub, FaFacebookSquare, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Qcard1 from '../../../assets/Qcard1.jpeg'
@@ -17,9 +18,11 @@ const RightCard = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser)
+                toast.success('Logged in Successfully')
             })
             .catch(error => {
                 console.log(error.message)
+                toast.success(error.message)
             })
     }
 

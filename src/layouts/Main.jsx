@@ -5,6 +5,7 @@ import Footer from '../components/shared/Footer/Footer';
 import HomeLeftCard from '../components/Home/LeftCard/HomeLeftCard'
 import HomeRightCard from '../components/Home/RightCard/HomeRightCard'
 import { Outlet } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
 const Main = () => {
     return (
@@ -16,6 +17,7 @@ const Main = () => {
                         <HomeLeftCard></HomeLeftCard>
                     </Col>
                     <Col lg={6}>
+                        <Toaster />
                         <Outlet></Outlet>
                     </Col>
                     <Col lg={3}>

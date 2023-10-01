@@ -9,6 +9,7 @@ import LoginPage from "../components/Login/LoginPage/LoginPage";
 import Register from "../components/Register/Register";
 import Terms from "../components/Terms/Terms";
 import Destination from "../components/Travel/Destination";
+import UserProfile from "../components/User/Profile/UserProfile";
 import Main from "../layouts/Main";
 import PrivateRoute from "./PrivateRoute";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path: '/destination',
                 element: <Destination></Destination>
+            },
+            {
+                path: '/profile',
+                element: <UserProfile></UserProfile>
             }
 
         ]

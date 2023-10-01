@@ -4,6 +4,7 @@ import logo from '../../../assets/logo.png'
 import { Link } from 'react-router-dom'
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../../providers/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Header = () => {
 
@@ -11,7 +12,9 @@ const Header = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then()
+            .then(() => {
+                toast.success('User logged out!')
+            })
             .catch(error => {
                 console.log(error.message)
             })
@@ -39,7 +42,7 @@ const Header = () => {
                         <Link className='text-decoration-none text-success me-3' to='/'>Home</Link>
                         <Link className='text-decoration-none text-success me-3' to='/'>Blogs</Link>
                         <Link className='text-decoration-none text-success' to='/destination'>Destination</Link>
-                        {user && <FaUserCircle className='mx-3' style={{ fontSize: '1.9rem' }} />}
+                        {user && <Link to={`/profile`}><FaUserCircle className='mx-3' style={{ fontSize: '1.9rem' }} /></Link>}
                         {
                             user ?
                                 <Button variant='outline-danger' className='mx-2' onClick={handleLogOut}>Logout</Button> :
