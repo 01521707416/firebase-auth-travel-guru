@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -6,7 +6,7 @@ import "toastify-js/src/toastify.css"
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
-    const { user, createUser } = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
     const [accepted, setAccepted] = useState(false)
