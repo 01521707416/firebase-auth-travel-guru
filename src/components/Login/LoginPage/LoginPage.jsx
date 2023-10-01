@@ -8,21 +8,18 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const LoginPage = () => {
 
-    const { logIn, user, passwordReset } = useContext(AuthContext)
-    const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
-    const navigate = useNavigate()
-    const location = useLocation()
-    console.log('Location at login page', location)
-    const from = location.state?.from.pathname || '/category/0'
-    const emailRef = useRef();
+    const { logIn, passwordReset } = useContext(AuthContext)  /* Initializing objects by useContect hook */
+
+    const navigate = useNavigate()  /* useNavigate hook for navigating routes */
+    const location = useLocation()  /* useLocation hook for cathing location info of current route */
+    console.log('Location at login page', location)  /* Printing out location info in the console panel */
+    const from = location.state?.from.pathname || '/category/0'  /* Stroing state info into 'from' variable */
+
+    const emailRef = useRef();  /* Using emailRef hook for cathing the email of the form */
 
     const handleLogin = (event) => {
         /* Preventing form auto refresh after submission */
         event.preventDefault()
-
-        setError('')
-        setSuccess('')
 
         /* Catching form data */
         const form = event.target;
@@ -37,7 +34,7 @@ const LoginPage = () => {
                 console.log(LoggedInUser)
                 toast.success('User logged in successfully')
                 navigate(from, { replace: true })
-                form.reset()
+                form.reset()    /* Clear form data after submission */
             })
             .catch(error => {
                 console.log(error.message)
@@ -46,13 +43,15 @@ const LoginPage = () => {
 
     }
 
+    /* Firebase reset password function */
     const resetPass = (event) => {
-        setError('')
-        setSuccess('')
         const email = emailRef.current.value
         console.log(email)
+
+        /* If email field is empty, system will through a message */
         if (!email) {
             toast.error('Provide email address to reset password!')
+            return
         }
         passwordReset(email)
             .then(result => {
@@ -70,14 +69,6 @@ const LoginPage = () => {
             <h4 className='text-primary text-center mb-4'>Welcome to <span className='text-success'>Travel Guru</span></h4>
             {/* Form Starts */}
             <Form className='w-50 mx-auto' onSubmit={handleLogin}>
-
-                {/* Error and Success Messages */}
-                <Form.Text className="text-success text-center">
-                    <strong>{success}</strong>
-                </Form.Text>
-                <Form.Text className="text-danger text-center">
-                    <strong>{error}</strong>
-                </Form.Text>
 
                 {/* Email Field */}
                 <Form.Group className='mb-3'>

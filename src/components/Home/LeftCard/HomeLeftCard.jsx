@@ -10,8 +10,10 @@ import Qcard3 from '../../../assets/Qcard3.jpeg'
 
 const LeftCard = () => {
 
+    /* Setting up useState hook for categories */
     const [categories, setCategories] = useState([])
 
+    /* Cathing API data using useEffect hook */
     useEffect(() => {
         fetch('https://travel-guru-server-8zt8mwgnh-khalequzzaman16-464-diuedubd.vercel.app/categories/')
             .then(res => res.json())

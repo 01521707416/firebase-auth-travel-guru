@@ -4,6 +4,9 @@ import { Outlet } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast';
 
 const LoginLayout = () => {
+
+    /* This is the layout for login page */
+
     return (
         <div>
             <Header></Header>

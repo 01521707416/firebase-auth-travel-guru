@@ -5,7 +5,10 @@ import { FaArrowLeft } from 'react-icons/fa'
 
 const CountryInfo = () => {
 
+    /* Catching API data from the loader using useLoaderData hook */
     const country = useLoaderData()
+
+    /* Initializing object properties from the props */
     const { _id, name, description, image_url } = country
 
     return (

@@ -11,18 +11,20 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const RightCard = () => {
 
+    /* Initializing context objects using useContect hook */
     const { googleLogIn, gitHubLogIn } = useContext(AuthContext)
 
+    /* Sign in function */
     const handleGoogleSignIn = () => {
         googleLogIn()
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser)
-                toast.success('Logged in Successfully')
+                toast.success('Logged in Successfully') /* Success message through react-hot-toast */
             })
             .catch(error => {
                 console.log(error.message)
-                toast.success(error.message)
+                toast.success(error.message)    /* Success message through react-hot-toast */
             })
     }
 
@@ -31,6 +33,7 @@ const RightCard = () => {
             .then(result => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser)
+                toast.success('Logged in Successfully') /* Success message through react-hot-toast */
             })
             .catch(error => {
                 console.log(error.message)
@@ -40,10 +43,14 @@ const RightCard = () => {
     return (
         <div className='mt-4'>
             <h5>Login with: </h5>
-            <div className='d-flex align-items-center mt-3'>
-                <Button className='btn-sm' variant='outline-success' onClick={handleGoogleSignIn}><FaGoogle /> Google</Button>
-                <Button className='btn-sm ms-2' variant='outline-success' onClick={handleGitHubSignIn}><FaGithub /> GitHub</Button>
-            </div>
+            <ListGroup className='mt-3'>
+                <ListGroup.Item className='text-center d-grid'>
+                    <Button className='btn-sm' variant='outline-success' onClick={handleGoogleSignIn}><FaGoogle /> Google</Button>
+                </ListGroup.Item>
+                <ListGroup.Item className='text-center d-grid'>
+                    <Button className='btn-sm' variant='outline-success' onClick={handleGitHubSignIn}><FaGithub /> GitHub</Button>
+                </ListGroup.Item>
+            </ListGroup >
             <div className='mt-4'>
                 <h5>Find Us On: </h5>
                 <ListGroup className='my-3'>
@@ -83,7 +90,7 @@ const RightCard = () => {
                     </Card.Body>
                 </Card>
             </div>
-        </div>
+        </div >
     );
 };
 

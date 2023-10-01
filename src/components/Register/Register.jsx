@@ -7,8 +7,6 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
-    const [error, setError] = useState('')
-    const [success, setSuccess] = useState('')
     const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
@@ -18,9 +16,6 @@ const Register = () => {
     const handleRegister = (event) => {
         /* Preventing form auto refresh after submission */
         event.preventDefault();
-
-        setError('')
-        setSuccess('')
 
         /* Catching form data */
         const form = event.target;
@@ -36,7 +31,6 @@ const Register = () => {
             toast.error('You cannot use Special character on name');
             return
         }
-
 
         //Using regex for email validation.
         if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
@@ -66,7 +60,6 @@ const Register = () => {
             return
         }
 
-
         /* Firebase createUser function */
         createUser(email, password)
             .then(result => {
@@ -88,20 +81,11 @@ const Register = () => {
         setAccepted(event.target.checked)
     }
 
-
     return (
         <Container className='mt-3 pt-2'>
             <h4 className='text-primary text-center mb-4'>Welcome to <span className='text-success'>Travel Guru</span></h4>
             {/* Form Starts */}
             <Form className='w-50 mx-auto' onSubmit={handleRegister}>
-
-                {/* Error and Success Messages */}
-                <Form.Text className="text-success text-center">
-                    <strong>{success}</strong>
-                </Form.Text>
-                <Form.Text className="text-danger text-center">
-                    <strong>{error}</strong>
-                </Form.Text>
 
                 {/* Name Field */}
                 <Form.Group className='mb-3'>

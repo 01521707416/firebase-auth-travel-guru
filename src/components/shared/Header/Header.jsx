@@ -11,6 +11,7 @@ const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
+    /* Logout function */
     const handleLogOut = () => {
         logOut()
             .then(() => {
@@ -19,6 +20,7 @@ const Header = () => {
             })
             .catch(error => {
                 console.log(error.message)
+                toast.error(error.message)
             })
     }
 

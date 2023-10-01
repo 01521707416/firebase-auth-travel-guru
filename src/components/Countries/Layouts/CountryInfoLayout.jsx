@@ -6,6 +6,9 @@ import Header from '../../shared/Header/Header';
 import HomeRightCard from '../../Home/RightCard/HomeRightCard'
 
 const CountryDetails = () => {
+
+    /* Layout for country details information card */
+
     return (
         <div>
             <Header></Header>

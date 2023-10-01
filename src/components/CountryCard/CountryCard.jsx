@@ -6,6 +6,7 @@ import '@smastrom/react-rating/style.css'
 
 const CountryCard = ({ country }) => {
 
+    /* Initializing object properties from the props */
     const { _id, name, description, image_url, star_ratings } = country
 
     return (
@@ -30,6 +31,7 @@ const CountryCard = ({ country }) => {
                     <small className='ms-3'>{star_ratings}</small>
                 </div>
             </Card.Footer>
+
         </Card>
     );
 };

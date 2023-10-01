@@ -10,6 +10,7 @@ const UserProfile = () => {
     console.log(user)
     const navigate = useNavigate()
 
+    /* Firebase user logout function */
     const handleLogOut = () => {
         logOut()
             .then(() => {
