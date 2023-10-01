@@ -2,10 +2,12 @@ import { useContext } from 'react';
 import { Card } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 const UserProfile = () => {
 
+    useTitle('Travel Guru | Profile')
     const { user, loading, logOut } = useContext(AuthContext);
     console.log(user)
     const navigate = useNavigate()

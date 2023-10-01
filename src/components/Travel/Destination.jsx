@@ -3,8 +3,13 @@ import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Link } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const Destination = () => {
+
+    /* Dynamic webpage title using custom hook */
+    useTitle('Travel Guru | Destination')
+
     return (
         <Container className='mt-4 pt-4'>
             <h4 className='text-primary text-center mb-4'>Welcome to <span className='text-success'>Travel Guru</span></h4>

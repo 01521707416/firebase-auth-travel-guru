@@ -2,12 +2,14 @@ import React, { useContext, useRef, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
 import { AuthContext } from '../../../providers/AuthProvider';
 
 
 
 const LoginPage = () => {
 
+    useTitle('Travel Guru | Login')
     const { logIn, passwordReset } = useContext(AuthContext)  /* Initializing objects by useContect hook */
 
     const navigate = useNavigate()  /* useNavigate hook for navigating routes */

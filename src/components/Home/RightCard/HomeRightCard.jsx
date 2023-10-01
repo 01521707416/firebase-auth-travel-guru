@@ -24,7 +24,7 @@ const RightCard = () => {
             })
             .catch(error => {
                 console.log(error.message)
-                toast.success(error.message)    /* Success message through react-hot-toast */
+                toast.error(error.message)    /* Success message through react-hot-toast */
             })
     }
 
@@ -37,6 +37,7 @@ const RightCard = () => {
             })
             .catch(error => {
                 console.log(error.message)
+                toast.error(error.message)
             })
     }
 

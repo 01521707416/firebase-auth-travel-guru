@@ -3,9 +3,12 @@ import { Button, Container, Form } from 'react-bootstrap';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import "toastify-js/src/toastify.css"
+import useTitle from '../../Hooks/useTitle';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
+
+    useTitle('Travel Guru | Register')
     const { createUser } = useContext(AuthContext)
     const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate()
