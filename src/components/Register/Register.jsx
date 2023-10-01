@@ -13,7 +13,7 @@ const Register = () => {
     const navigate = useNavigate()
     const location = useLocation()
     console.log('Location at register page', location)
-    const from = location.state?.from.pathname || '/category/0'
+    const from = location?.state?.from.pathname || '/category/0'
 
     const handleRegister = (event) => {
         /* Preventing form auto refresh after submission */
