@@ -8,7 +8,7 @@ import useTitle from '../../Hooks/useTitle';
 const Destination = () => {
 
     /* Dynamic webpage title using custom hook */
-    useTitle('Travel Guru | Destination')
+    useTitle('Destination')
 
     return (
         <Container className='mt-4 pt-4'>

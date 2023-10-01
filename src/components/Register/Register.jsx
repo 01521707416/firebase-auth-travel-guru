@@ -8,7 +8,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const Register = () => {
 
-    useTitle('Travel Guru | Register')
+    useTitle('Register')
     const { createUser } = useContext(AuthContext)
     const [accepted, setAccepted] = useState(false)
     const navigate = useNavigate()

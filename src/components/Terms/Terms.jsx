@@ -6,7 +6,7 @@ import { BsArrowReturnLeft } from 'react-icons/bs';
 import useTitle from '../../Hooks/useTitle';
 
 const Terms = () => {
-    useTitle('Travel Guru | Terms')
+    useTitle('Terms')
     return (
         <Container className='mt-4'>
             <h4 className='text-center text-success mb-3'>** Terms and Conditions **</h4>

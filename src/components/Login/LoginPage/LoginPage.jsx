@@ -9,7 +9,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const LoginPage = () => {
 
-    useTitle('Travel Guru | Login')
+    useTitle('Login')
     const { logIn, passwordReset } = useContext(AuthContext)  /* Initializing objects by useContect hook */
 
     const navigate = useNavigate()  /* useNavigate hook for navigating routes */

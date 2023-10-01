@@ -7,7 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const UserProfile = () => {
 
-    useTitle('Travel Guru | Profile')
+    useTitle('Profile')
     const { user, loading, logOut } = useContext(AuthContext);
     console.log(user)
     const navigate = useNavigate()
