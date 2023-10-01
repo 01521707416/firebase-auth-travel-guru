@@ -33,7 +33,7 @@ const Register = () => {
         }
 
         //Using regex for email validation.
-        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
             toast.error('Please use valid Email!');
             return
         }
