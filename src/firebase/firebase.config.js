@@ -4,19 +4,16 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-
-/* VITE Environment Variable Test */
-console.log('VITE TESTING code is: ', import.meta.env.VITE_PASS)
-
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_APIKEY,
-    authDomain: import.meta.env.VITE_AUTHDOMAIN,
-    projectId: import.meta.env.VITE_PROJECTID,
-    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
-    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
-    appId: import.meta.env.VITE_APPID
+  apiKey: "AIzaSyAAi8RKOtM-HNYjlauKqTid1x59m4jRr9U",
+  authDomain: "email-login-9d206.firebaseapp.com",
+  projectId: "email-login-9d206",
+  storageBucket: "email-login-9d206.appspot.com",
+  messagingSenderId: "685154230700",
+  appId: "1:685154230700:web:08939e43ad3fdf4cc75a09"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app
+
+//Exporting firebase configure (app) to use in AuthContext.
+export default app;
